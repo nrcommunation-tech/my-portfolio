@@ -1,0 +1,389 @@
+html{
+    scroll-behavior:smooth;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+nav{
+    background:#0077ff;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.hero{
+    text-align:center;
+    margin-top:120px;
+}
+
+.hero h1{
+    color:#0077ff;
+    font-size:50px;
+}
+
+.hero p{
+    margin:20px;
+    font-size:20px;
+}
+
+button{
+    padding:12px 25px;
+    background:#0077ff;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+button:hover{
+    background:#005fd1;
+}
+
+.about{
+    background:#f4f4f4;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.about h2{
+    font-size:40px;
+    color:#0077ff;
+    margin-bottom:20px;
+}
+
+.about p{
+    width:70%;
+    margin:auto;
+    font-size:20px;
+    line-height:1.8;
+}
+.services{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.services h2{
+    font-size:40px;
+    color:#0077ff;
+    margin-bottom:40px;
+}
+
+.service-box{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:250px;
+    padding:20px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.card h3{
+    color:#0077ff;
+    margin-bottom:15px;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    transition:0.3s;
+}
+.contact{
+    padding:80px 20px;
+    background:#f4f4f4;
+    text-align:center;
+}
+
+.contact h2{
+    color:#0077ff;
+    font-size:40px;
+    margin-bottom:30px;
+}
+
+form{
+    width:50%;
+    margin:auto;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+textarea{
+    height:150px;
+    resize:none;
+}
+
+form button{
+    width:100%;
+}
+footer{
+    background:#0077ff;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+}
+
+footer p{
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+.social-links a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+.social-links a:hover{
+    text-decoration:underline;
+}
+.skills{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.skills h2{
+    font-size:40px;
+    color:#0077ff;
+    margin-bottom:30px;
+}
+
+.skill{
+    width:60%;
+    margin:20px auto;
+    text-align:left;
+}
+
+.skill p{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+.progress{
+    width:100%;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.html,
+.css,
+.js{
+    color:white;
+    text-align:right;
+    padding:8px 10px;
+    font-weight:bold;
+}
+
+.html{
+    width:90%;
+    background:#0077ff;
+}
+
+.css{
+    width:80%;
+    background:#28a745;
+}
+
+.js{
+    width:70%;
+    background:#ff9800;
+}
+.about img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    margin:20px 0;
+    border:5px solid #0077ff;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+.projects{
+    padding:80px 20px;
+    background:#f9f9f9;
+    text-align:center;
+}
+
+.projects h2{
+    font-size:40px;
+    color:#0077ff;
+    margin-bottom:40px;
+}
+
+.project-box{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.project-card{
+    width:280px;
+    padding:20px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+}
+
+.project-card h3{
+    color:#0077ff;
+    margin-bottom:15px;
+}
+/* Responsive Website */
+
+@media (max-width:768px){
+
+    nav{
+        flex-direction:column;
+        padding:20px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        margin-top:15px;
+    }
+
+    nav ul li{
+        margin:10px 0;
+    }
+
+    .hero{
+        margin-top:60px;
+        padding:20px;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .about p,
+    form,
+    .skill{
+        width:90%;
+    }
+
+    .service-box,
+    .project-box{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card,
+    .project-card{
+        width:90%;
+    }
+
+    .about img{
+        width:150px;
+        height:150px;
+    }
+
+    .social-links a{
+        display:block;
+        margin:10px 0;
+    }
+}
+.project-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.project-card button{
+    margin-top:15px;
+    width:100%;
+}
+#theme-btn{
+    margin-left:20px;
+    padding:8px 15px;
+    background:white;
+    color:#0077ff;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.dark-mode{
+    background:#121212;
+    color:white;
+}
+
+.dark-mode .about,
+.dark-mode .contact,
+.dark-mode .projects{
+    background:#1f1f1f;
+}
+
+.dark-mode .card,
+.dark-mode .project-card{
+    background:#2c2c2c;
+    color:white;
+}
+#typing{
+    color:#0077ff;
+    font-size:35px;
+    font-weight:bold;
+}
+.download-btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:#0077ff;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    font-size:18px;
+}
+
+.download-btn:hover{
+    background:#005fd1;
+}
