@@ -1,4 +1,3 @@
-
 function showMessage() {
     alert("Welcome to my professional website!");
 }
@@ -63,3 +62,103 @@ function validateForm(){
     alert("Message Sent Successfully!");
     return true;
 }
+function searchProjects() {
+
+    let input = document.getElementById("search").value.toLowerCase();
+
+    let projects = document.querySelectorAll(".project-card");
+
+    projects.forEach(function(project) {
+
+        let title = project.querySelector("h3").textContent.toLowerCase();
+
+        if (title.includes(input)) {
+            project.style.display = "block";
+        } else {
+            project.style.display = "none";
+        }
+
+    });
+
+}
+function filterProjects(category) {
+
+    let projects = document.querySelectorAll(".project-card");
+
+    projects.forEach(function(project) {
+
+        if (category === "all") {
+            project.style.display = "block";
+        } else if (project.dataset.category === category) {
+            project.style.display = "block";
+        } else {
+            project.style.display = "none";
+        }
+
+    });
+
+}
+// ===== ScrollReveal (Temporarily Disabled) =====
+
+// ScrollReveal().reveal('.hero', {
+//     delay: 200,
+//     distance: '60px',
+//     origin: 'top',
+//     duration: 1000
+// });
+
+// ScrollReveal().reveal('.about', {
+//     delay: 300,
+//     distance: '60px',
+//     origin: 'left',
+//     duration: 1000
+// });
+
+// ScrollReveal().reveal('.services', {
+//     delay: 400,
+//     distance: '60px',
+//     origin: 'bottom',
+//     duration: 1000
+// });
+
+// ScrollReveal().reveal('.skills', {
+//     delay: 500,
+//     distance: '60px',
+//     origin: 'right',
+//     duration: 1000
+// });
+
+// ScrollReveal().reveal('.projects', {
+//     delay: 600,
+//     distance: '60px',
+//     origin: 'bottom',
+//     duration: 1000
+// });
+
+// ScrollReveal().reveal('.contact', {
+//     delay: 700,
+//     distance: '60px',
+//     origin: 'left',
+//     duration: 1000
+// });
+
+window.addEventListener("load", function () {
+    setTimeout(function () {
+        const loader = document.getElementById("loader");
+        if (loader) {
+            loader.style.display = "none";
+        }
+    }, 2000);
+});
+window.onscroll = function () {
+
+    let winScroll = document.documentElement.scrollTop;
+
+    let height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    let scrolled = (winScroll / height) * 100;
+
+    document.getElementById("progress-bar").style.width = scrolled + "%";
+};

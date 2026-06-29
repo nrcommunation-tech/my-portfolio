@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="progress-bar"></div>
+
+<div id="loader">
+    <div class="spinner"></div>
+</div>
 
 <nav>
     <h2>My Website</h2>
@@ -31,32 +36,45 @@
 </nav>
 
 <section id="home" class="hero">
+    <div id="particles-js"></div>
     <h1>Hi, I'm Kunal</h1>
 
 <h2><span id="typing"></span></h2>
 
-<p>Learn HTML, CSS and JavaScript with me.</p>
+<p>We provide professional web development services for businesses and individuals.</p>
 
-<button onclick="showMessage()">Get Started</button>
+<button onclick="showMessage('Scroll down and check out my work!')">Get Started</button>
 
 <br><br>
 
-<a href="resume/resume.pdf" download class="download-btn">
-    📄 Download Resume
+<a href="calculator/index.html" target="_blank" class="download-btn">
+    📄 Check my Calculator
+</a>
+
+<br><br>
+
+<a href="Resume.pdf" target="_blank" class="download-btn">
+📄 View Resume
+</a>
+
+<br><br>
+
+<a href="Resume.pdf" download class="download-btn">
+📥 Download Resume
 </a>
 </section>
 <section id="about" class="about">
     <h2>About Me</h2>
-<img src="image/photo.jpeg" alt="My Photo">
+<img src="image/newimage.jpg" alt="My Photo">
     <p>
         Hello! My name is Kunal.
         I am learning HTML, CSS and JavaScript.
-        My goal is to become a Professional Web Developer.
+       I help local shopkeepers establish their business online.
     </p>
 </section>
 <section id="services" class="services">
 
-    <h2>My Services</h2>
+    <h2>The Services I provide</h2>
 
     <div class="service-box">
 
@@ -76,21 +94,6 @@
         </div>
 
     </div>
-
-</section>
-<section id="contact" class="contact">
-
-    <h2>Contact Me</h2>
-
-   <form onsubmit="return validateForm()">
-    <input type="text" id="name" placeholder="Enter Your Name">
-
-    <input type="email" id="email" placeholder="Enter Your Email">
-
-    <textarea id="message" placeholder="Enter Your Message"></textarea>
-
-    <button type="submit">Send Message</button>
-</form>
 
 </section>
 <section id="skills" class="skills">
@@ -123,9 +126,20 @@
 
     <h2>My Projects</h2>
 
-    <div class="project-box">
+<div class="filter-buttons">
+    <button onclick="filterProjects('all')">All</button>
+    <button onclick="filterProjects('html')">HTML</button>
+    <button onclick="filterProjects('javascript')">JavaScript</button>
+</div>
 
-        <div class="project-card">
+<input
+    type="text"
+    id="search"
+    placeholder="🔍 Search Project..."
+    onkeyup="searchProjects()">
+
+    <div class="project-box">
+        <div class="project-card" data-category="javascript">
     <img src="image/calculator.jpg" alt="Calculator">
     <h3>Calculator</h3>
     <p>Simple Calculator using HTML, CSS & JavaScript.</p>
@@ -136,17 +150,16 @@
 
 <br><br>
 
-<a href="#" target="_blank">
+<a href="https://github.com/nrcommunation-tech/my-portfolio" target="_blank">
     <button>💻 GitHub Code</button>
 </a>
 </div>
-``
-        <div class="project-card">
+        <div class="project-card" data-category="html">
             <h3>Portfolio Website</h3>
             <p>My Personal Portfolio Website.</p>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-category="javascript">
             <h3>To-Do App</h3>
             <p>Task Management App using JavaScript.</p>
         </div>
@@ -154,9 +167,24 @@
     </div>
 
 </section>
-<script src="script.js"></script>
+<section id="contact" class="contact">
+
+    <h2>Contact Me</h2>
+
+   <form onsubmit="return validateForm()">
+    <input type="text" id="name" placeholder="Enter Your Name">
+
+    <input type="email" id="email" placeholder="Enter Your Email">
+
+    <textarea id="message" placeholder="Enter Your Message"></textarea>
+
+    <button type="submit">Send Message</button>
+</form>
+
+</section>
 
 <footer>
+
     <p>© 2025 My Website | Made by Kunal</p>
 
     <div class="social-links">
@@ -165,6 +193,15 @@
         <a href="#">LinkedIn</a>
         <a href="#">GitHub</a>
     </div>
+
 </footer>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="particles.js"></script>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<script src="script.js"></script>
+
 </body>
 </html>
