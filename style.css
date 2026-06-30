@@ -1089,3 +1089,38 @@ display:block;
 margin:auto;
 
 }
+@media (max-width:768px){
+
+.business-box{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+padding:10px;
+
+}
+
+.business-card{
+
+width:auto;
+
+height:auto;
+
+margin:0;
+
+}
+
+.business-card img{
+
+width:100px;
+
+height:100px;
+
+object-fit:contain;
+
+}
+
+}
