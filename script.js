@@ -162,3 +162,54 @@ window.onscroll = function () {
 
     document.getElementById("progress-bar").style.width = scrolled + "%";
 };
+window.addEventListener("scroll", function(){
+
+let btn =
+document.getElementById("topBtn");
+
+if(window.scrollY>300){
+
+btn.style.display="block";
+
+}else{
+
+btn.style.display="none";
+
+}
+
+});
+
+function scrollToTop(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+window.addEventListener("load",function(){
+
+let count =
+localStorage.getItem("visit") || 0;
+
+count++;
+
+localStorage.setItem(
+"visit",
+count
+);
+
+let counter =
+document.getElementById("count");
+
+if(counter){
+
+counter.textContent =
+count;
+
+}
+
+});
