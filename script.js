@@ -1,215 +1,169 @@
-function showMessage() {
-    alert("Welcome to my professional website!");
-}
+// ===============================
+// N.R Communication
+// Professional Business Website
+// script.js
+// ===============================
 
-function toggleMenu() {
-    document.querySelector("nav ul").classList.toggle("active");
-}
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
 
-function toggleTheme() {
-    document.body.classList.toggle("dark-mode");
+        const target = document.querySelector(this.getAttribute("href"));
 
-    let btn = document.getElementById("theme-btn");
+        if (target) {
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    });
+});
 
-    if (document.body.classList.contains("dark-mode")) {
-        btn.innerHTML = "☀️ Light Mode";
+// ===============================
+// Navbar Shadow on Scroll
+// ===============================
+
+window.addEventListener("scroll", function () {
+
+    const nav = document.querySelector("nav");
+
+    if (window.scrollY > 50) {
+        nav.style.boxShadow = "0 10px 30px rgba(0,0,0,.25)";
     } else {
-        btn.innerHTML = "🌙 Dark Mode";
-    }
-}
-const text = [
-    "Web Developer",
-    "Frontend Developer",
-    "JavaScript Learner"
-];
-
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
-
-(function type(){
-
-    if(count === text.length){
-        count = 0;
+        nav.style.boxShadow = "none";
     }
 
-    currentText = text[count];
-    letter = currentText.slice(0, ++index);
-
-    document.getElementById("typing").textContent = letter;
-
-    if(letter.length === currentText.length){
-        count++;
-        index = 0;
-        setTimeout(type, 1000);
-    }else{
-        setTimeout(type,150);
-    }
-
-})();
-function validateForm(){
-
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
-
-    if(name==="" || email==="" || message===""){
-        alert("Please fill all fields.");
-        return false;
-    }
-
-    alert("Message Sent Successfully!");
-    return true;
-}
-function searchProjects() {
-
-    let input = document.getElementById("search").value.toLowerCase();
-
-    let projects = document.querySelectorAll(".project-card");
-
-    projects.forEach(function(project) {
-
-        let title = project.querySelector("h3").textContent.toLowerCase();
-
-        if (title.includes(input)) {
-            project.style.display = "block";
-        } else {
-            project.style.display = "none";
-        }
-
-    });
-
-}
-function filterProjects(category) {
-
-    let projects = document.querySelectorAll(".project-card");
-
-    projects.forEach(function(project) {
-
-        if (category === "all") {
-            project.style.display = "block";
-        } else if (project.dataset.category === category) {
-            project.style.display = "block";
-        } else {
-            project.style.display = "none";
-        }
-
-    });
-
-}
-// ===== ScrollReveal (Temporarily Disabled) =====
-
-// ScrollReveal().reveal('.hero', {
-//     delay: 200,
-//     distance: '60px',
-//     origin: 'top',
-//     duration: 1000
-// });
-
-// ScrollReveal().reveal('.about', {
-//     delay: 300,
-//     distance: '60px',
-//     origin: 'left',
-//     duration: 1000
-// });
-
-// ScrollReveal().reveal('.services', {
-//     delay: 400,
-//     distance: '60px',
-//     origin: 'bottom',
-//     duration: 1000
-// });
-
-// ScrollReveal().reveal('.skills', {
-//     delay: 500,
-//     distance: '60px',
-//     origin: 'right',
-//     duration: 1000
-// });
-
-// ScrollReveal().reveal('.projects', {
-//     delay: 600,
-//     distance: '60px',
-//     origin: 'bottom',
-//     duration: 1000
-// });
-
-// ScrollReveal().reveal('.contact', {
-//     delay: 700,
-//     distance: '60px',
-//     origin: 'left',
-//     duration: 1000
-// });
-
-window.addEventListener("load", function () {
-    setTimeout(function () {
-        const loader = document.getElementById("loader");
-        if (loader) {
-            loader.style.display = "none";
-        }
-    }, 2000);
 });
-window.onscroll = function () {
 
-    let winScroll = document.documentElement.scrollTop;
+// ===============================
+// Typing Effect
+// ===============================
 
-    let height =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
+const text = "Electrical • Electronics • Kitchen Appliances • Mobile Accessories";
 
-    let scrolled = (winScroll / height) * 100;
+const typing = document.getElementById("typing");
 
-    document.getElementById("progress-bar").style.width = scrolled + "%";
+let i = 0;
+
+function typeText() {
+
+    if (!typing) return;
+
+    if (i < text.length) {
+
+        typing.innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(typeText, 60);
+
+    }
+
+}
+
+window.onload = typeText;
+
+// ===============================
+// Back To Top Button
+// ===============================
+
+const topBtn = document.createElement("button");
+
+topBtn.innerHTML = "⬆";
+
+topBtn.id = "topBtn";
+
+document.body.appendChild(topBtn);
+
+topBtn.style.cssText = `
+position:fixed;
+right:20px;
+bottom:20px;
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:#0d6efd;
+color:#fff;
+font-size:22px;
+cursor:pointer;
+display:none;
+z-index:9999;
+box-shadow:0 0 15px rgba(13,110,253,.6);
+`;
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 300) {
+
+        topBtn.style.display = "block";
+
+    } else {
+
+        topBtn.style.display = "none";
+
+    }
+
+});
+
+topBtn.onclick = () => {
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
 };
-window.addEventListener("scroll", function(){
 
-let btn =
-document.getElementById("topBtn");
+// ===============================
+// Reveal Animation
+// ===============================
 
-if(window.scrollY>300){
-
-btn.style.display="block";
-
-}else{
-
-btn.style.display="none";
-
-}
-
-});
-
-function scrollToTop(){
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-}
-window.addEventListener("load",function(){
-
-let count =
-localStorage.getItem("visit") || 0;
-
-count++;
-
-localStorage.setItem(
-"visit",
-count
+const cards = document.querySelectorAll(
+".featured-card,.business-card,.about-card,.shop-card"
 );
 
-let counter =
-document.getElementById("count");
+const observer = new IntersectionObserver(entries => {
 
-if(counter){
+entries.forEach(entry=>{
 
-counter.textContent =
-count;
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0)";
 
 }
 
 });
+
+});
+
+cards.forEach(card=>{
+
+card.style.opacity="0";
+
+card.style.transform="translateY(60px)";
+
+card.style.transition=".7s";
+
+observer.observe(card);
+
+});
+
+// ===============================
+// Footer Year
+// ===============================
+
+const footer = document.querySelector("footer p:last-child");
+
+if(footer){
+
+footer.innerHTML="© "+new Date().getFullYear()+" N.R Communication | All Rights Reserved.";
+
+}
+
+console.log("Website Loaded Successfully");

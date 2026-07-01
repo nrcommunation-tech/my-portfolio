@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>N.R Communication | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="progress-bar"></div>
+
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+
+<nav>
+    <h2>N.R Communication</h2>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#business">Business</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button id="theme-btn" onclick="toggleTheme()">
+        🌙 Dark Mode
+    </button>
+
+</nav>
+
+<section id="home" class="hero">
+    <div id="particles-js"></div>
+    <div class="shop-banner">
+
+<img src="image/shop.png" alt="N.R Communication Shop">
+
+</div>
+    <h1>N.R Communication</h1>
+
+<h2><span id="typing"></span></h2>
+
+<p>
+Electrical • Electronics • Kitchen Appliances • Mobile Accessories
+</p>
+
+<div class="hero-buttons">
+
+<a href="#business" class="download-btn">
+🛍️ View Products
+</a>
+
+<a href="https://wa.me/918812981480" target="_blank" class="download-btn">
+📲 WhatsApp Now
+</a>
+
+<a href="#contact" class="download-btn">
+📞 Contact Us
+</a>
+
+</section>
+<section id="about" class="about">
+    <h2>About Me</h2>
+    <p class="status">
+🟢 Available For Projects
+</p>
+<img src="image/myphoto.png" alt="My Photo">
+    <p>
+        Hello! My name is Kunal.
+        I am learning HTML, CSS and JavaScript.
+       I help local shopkeepers establish their business online.
+    </p>
+</section>
+<section id="services" class="services">
+
+    <h2>The Services I provide</h2>
+
+    <div class="service-box">
+
+        <div class="card">
+            <h3>Web Design</h3>
+            <p>I create beautiful websites.</p>
+        </div>
+
+        <div class="card">
+            <h3>HTML & CSS</h3>
+            <p>I build responsive websites.</p>
+        </div>
+
+        <div class="card">
+            <h3>JavaScript</h3>
+            <p>I make websites interactive.</p>
+        </div>
+
+    </div>
+
+</section>
+<section id="skills" class="skills">
+
+    <h2>My Skills</h2>
+
+    <div class="skill">
+        <p>HTML</p>
+        <div class="progress">
+            <div class="html">90%</div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <p>CSS</p>
+        <div class="progress">
+            <div class="css">80%</div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <p>JavaScript</p>
+        <div class="progress">
+            <div class="js">70%</div>
+        </div>
+    </div>
+
+</section>
+<section id="projects" class="projects">
+
+    <h2>My Projects</h2>
+
+<div class="filter-buttons">
+    <button onclick="filterProjects('all')">All</button>
+    <button onclick="filterProjects('html')">HTML</button>
+    <button onclick="filterProjects('javascript')">JavaScript</button>
+</div>
+
+<input
+    type="text"
+    id="search"
+    placeholder="🔍 Search Project..."
+    onkeyup="searchProjects()">
+
+    <div class="project-box">
+        <div class="project-card" data-category="javascript">
+    <img src="image/calculator.jpg" alt="Calculator">
+    <h3>Calculator</h3>
+    <p>Simple Calculator using HTML, CSS & JavaScript.</p>
+
+    <a href="calculator/index.html" target="_blank">
+    <button>🚀 Live Demo</button>
+</a>
+
+<br><br>
+
+<a href="https://github.com/nrcommunation-tech/my-portfolio" target="_blank">
+    <button>💻 GitHub Code</button>
+</a>
+</div>
+        <div class="project-card" data-category="html">
+            <h3>Portfolio Website</h3>
+            <p>My Personal Portfolio Website.</p>
+        </div>
+
+        <div class="project-card" data-category="javascript">
+            <h3>To-Do App</h3>
+            <p>Task Management App using JavaScript.</p>
+        </div>
+
+    </div>
+
+<section id="featured" class="featured">
+
+<h2>⭐ Featured Products ⭐</h2>
+
+<div class="featured-box">
+
+<div class="featured-card">
+<img src="image/lights.png" alt="LED Lights">
+<h3>LED Lights</h3>
+<p>Energy Saving & Premium Quality</p>
+</div>
+
+<div class="featured-card">
+<img src="image/fan.png" alt="BLDC Fan">
+<h3>BLDC Fan</h3>
+<p>Low Power • High Performance</p>
+</div>
+
+<div class="featured-card">
+<img src="image/gas-stove.png" alt="Gas Stove">
+<h3>Gas Stove</h3>
+<p>Safe • Stylish • Durable</p>
+</div>
+
+<div class="featured-card">
+<img src="image/induction.png" alt="Induction">
+<h3>Induction Cooktop</h3>
+<p>Fast Cooking • Easy to Use</p>
+</div>
+
+<div class="featured-card">
+<img src="image/mobile-accessories.png" alt="Mobile Accessories">
+<h3>Mobile Accessories</h3>
+<p>Chargers • Earphones • Cables</p>
+</div>
+
+<div class="featured-card">
+<img src="image/kettle.png" alt="Electric Kettle">
+<h3>Electric Kettle</h3>
+<p>Quick Boil • Best Quality</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="business" class="business">
+
+<h2 class="business-title">✨ Our Best Selling Products ✨</h2>
+
+<p class="business-subtitle">
+Quality Products | Best Price | Fast Delivery
+</p>
+
+<div class="business-box">
+
+<!-- यहीं से आपका पुराना Business Cards शुरू होगा -->
+
+<div class="business-card">
+<img src="image/induction.png" alt="Induction">
+<h3>Induction</h3>
+
+<a href="https://wa.me/918812981480" target="_blank">
+<button class="order-btn">
+Order on WhatsApp
+</button>
+</a>
+
+</div>
+
+
+<div class="business-card">
+    <img src="image/gas-stove.png" alt="Gas Stove">
+    <h3>Gas Stove</h3>
+    <a href="https://wa.me/918812981480" target="_blank">
+
+<button class="order-btn">
+
+Order on WhatsApp
+
+</button>
+
+</a>
+</div>
+
+<div class="business-card">
+    <img src="image/gift item.png" alt="Gift Item">
+    <h3>Gift Item</h3>
+    <a href="https://wa.me/918812981480" target="_blank">
+
+<button class="order-btn">
+
+Order on WhatsApp
+
+</button>
+
+</a>
+</div>
+
+<div class="business-card">
+    <img src="image/kettle.png" alt="Electric Kettle">
+    <h3>Electric Kettle</h3>
+    <a href="https://wa.me/918812981480" target="_blank">
+
+<button class="order-btn">
+
+Order on WhatsApp
+
+</button>
+
+</a>
+</div>
+
+<div class="business-card">
+    <img src="image/study lamp.png" alt="Study Lamp">
+    <h3>Study Lamp</h3>
+    <a href="https://wa.me/918812981480" target="_blank">
+
+<button class="order-btn">
+
+Order on WhatsApp
+
+</button>
+
+</a>
+</div>
+
+<div class="business-card">
+    <img src="image/press iron.png" alt="Press Iron">
+    <h3>Press Iron</h3>
+    <a href="https://wa.me/918812981480" target="_blank">
+
+<button class="order-btn">
+
+Order on WhatsApp
+
+</button>
+
+</a>
+</div>
+
+<div class="business-card">
+    <img src="image/mobile-accessories.png" alt="Mobile Accessories">
+    <h3>Mobile Accessories</h3>
+    <a href="https://wa.me/918812981480" target="_blank">
+
+<button class="order-btn">
+
+Order on WhatsApp
+
+</button>
+
+</a>
+</div>
+
+<div class="business-card">
+
+<span class="badge">BEST SELLER</span>
+
+<img src="image/lights.png">
+
+<h3>Electrical & Lights</h3>
+
+<a href="https://wa.me/918812981480" target="_blank">
+<button class="order-btn">Order on WhatsApp</button>
+</a>
+
+</div>
+
+<div class="business-card">
+<img src="image/electronics.png">
+<h3>Electronics</h3>
+<a href="https://wa.me/918812981480" target="_blank">
+
+<button class="order-btn">
+
+Order on WhatsApp
+
+</button>
+
+</a>
+</div>
+
+<div class="business-card">
+<img src="image/kitchen.png">
+<h3>Kitchen Ware</h3>
+<a href="https://wa.me/918812981480" target="_blank">
+
+<button class="order-btn">
+
+Order on WhatsApp
+
+</button>
+
+</a>
+</div>
+
+<div class="business-card">
+<img src="image/mixer.png">
+<h3>Mixer Grinder</h3>
+<a href="https://wa.me/918812981480" target="_blank">
+
+<button class="order-btn">
+
+Order on WhatsApp
+
+</button>
+
+</a>
+</div>
+
+<div class="business-card">
+<img src="image/cooker.png">
+<h3>Cooker</h3>
+<a href="https://wa.me/918812981480" target="_blank">
+
+<button class="order-btn">
+
+Order on WhatsApp
+
+</button>
+
+</a>
+</div>
+
+<div class="business-card">
+<img src="image/fan.png">
+<h3>Fan</h3>
+<a href="https://wa.me/918812981480" target="_blank">
+
+<button class="order-btn">
+
+Order on WhatsApp
+
+</button>
+
+</a>
+</div>
+
+<div class="business-card">
+<img src="image/soundsystem.png" alt="Sound System">
+<h3>Sound System</h3>
+<a href="https://wa.me/918812981480" target="_blank">
+
+<button class="order-btn">
+
+Order on WhatsApp
+
+</button>
+
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+</div>
+
+</section>
+
+<!-- J.K Kedia Road-->
+
+<section id="shop-info" class="shop-info">
+
+... J.K kedia road opp: sbi near axix bank 782435...
+
+</section>
+
+<section id="contact" class="contact">
+
+    <h2>Contact Me</h2>
+
+   <form onsubmit="return validateForm()">
+    <input type="text" id="name" placeholder="Enter Your Name">
+
+    <input type="email" id="email" placeholder="Enter Your Email">
+
+    <textarea id="message" placeholder="Enter Your Message"></textarea>
+
+    <button type="submit">Send Message</button>
+</form>
+
+</section>
+<div class="visitor">
+👁 Visitors:
+<span id="count">0</span>
+</div>
+
+<footer>
+
+    <p>© 2025 My Website | Made by Kunal</p>
+
+   <div class="social-links">
+
+<a href="https://facebook.com/yourusername" target="_blank">
+Facebook
+</a>
+
+<a href="https://instagram.com/yourusername" target="_blank">
+Instagram
+</a>
+
+<a href="https://linkedin.com/in/yourusername" target="_blank">
+LinkedIn
+</a>
+
+<a href="https://github.com/nrcommunation-tech" target="_blank">
+GitHub
+</a>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="particles.js"></script>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<script src="script.js"></script>
+<button id="topBtn" onclick="scrollToTop()">
+↑
+</button>
+
+</body>
+</html>
