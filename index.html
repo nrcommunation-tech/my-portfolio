@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -24,15 +26,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 N.R Communication
 </div>
 
-<ul>
+<div class="menu-toggle" id="menu-toggle">
+☰
+</div>
+
+<ul id="nav-menu">
 
 <li><a href="#home">Home</a></li>
 
 <li><a href="#about">About</a></li>
 
-<li><a href="#featured">Products</a></li>
+<li><a href="#featured">Featured</a></li>
 
-<li><a href="#business">Business</a></li>
+<li><a href="#business">Products</a></li>
 
 <li><a href="#shop-info">Shop Info</a></li>
 
@@ -40,9 +46,17 @@ N.R Communication
 
 </ul>
 
-<a href="https://wa.me/918812981480" target="_blank" class="nav-btn">
+<a href="https://wa.me/918812981480"
+target="_blank"
+class="nav-btn">
+
 WhatsApp
+
 </a>
+
+<button id="dark-mode-toggle" class="dark-btn">
+🌙
+</button>
 
 </nav>
 
@@ -52,7 +66,19 @@ WhatsApp
 
 <div id="particles-js"></div>
 
-<h1>Welcome To</h1>
+<div class="slider">
+
+    <img class="slide active" src="image/shop.png" alt="Shop">
+
+    <img class="slide" src="image/fan.png" alt="Fan">
+
+    <img class="slide" src="image/induction.png" alt="Induction">
+
+    <img class="slide" src="image/lights.png" alt="LED Lights">
+
+</div>
+
+<h4>Welcome To</h4>
 
 <h1>N.R Communication</h1>
 
@@ -67,15 +93,11 @@ Electrical • Electronics • Kitchen Appliances • Mobile Accessories
 <div class="hero-buttons">
 
 <a href="#featured" class="hero-btn">
-
 🛒 View Products
-
 </a>
 
 <a href="https://wa.me/918812981480"
-
 target="_blank"
-
 class="hero-btn">
 
 💬 WhatsApp
@@ -83,7 +105,6 @@ class="hero-btn">
 </a>
 
 <a href="#contact"
-
 class="hero-btn">
 
 📞 Contact
@@ -94,6 +115,29 @@ class="hero-btn">
 
 </section>
 
+<!-- ================= OFFER ================= -->
+
+<section class="offer-banner">
+
+<h2>🎉 Special Offer 🎉</h2>
+
+<p>
+
+✅ Best Quality Products |
+🚚 Fast Delivery |
+💰 Best Price Guaranteed
+
+</p>
+
+<a href="https://wa.me/918812981480"
+target="_blank"
+class="offer-btn">
+
+📲 Order on WhatsApp
+
+</a>
+
+</section>
 <!-- ================= ABOUT ================= -->
 
 <section id="about" class="about">
@@ -106,30 +150,12 @@ class="hero-btn">
 
 Welcome to <b>N.R Communication</b>.
 
-We provide high quality Electrical,
-
-Electronics, Kitchen Appliances,
-
-Lighting Products,
-
-Fans,
-
-Cookers,
-
-Mixer Grinders,
-
-Rice Cookers,
-
-Induction,
-
-Gas Stove,
-
-Gift Items,
-
-Mobile Accessories
-
-and many more products
-
+We provide high quality Electrical, Electronics,
+Kitchen Appliances, Lighting Products,
+Fans, Cookers, Mixer Grinders,
+Rice Cookers, Induction,
+Gas Stove, Gift Items,
+Mobile Accessories and many more products
 at the best price.
 
 </p>
@@ -137,43 +163,59 @@ at the best price.
 <div class="about-box">
 
 <div class="about-card">
-
 <h3>🏆 Best Quality</h3>
-
-<p>Original Products</p>
-
+<p>100% Original Products</p>
 </div>
 
 <div class="about-card">
-
 <h3>🚚 Fast Delivery</h3>
-
-<p>Quick Service</p>
-
+<p>Quick & Safe Delivery</p>
 </div>
 
 <div class="about-card">
-
 <h3>💰 Best Price</h3>
-
 <p>Affordable Price</p>
-
 </div>
 
 <div class="about-card">
-
-<h3>📞 Support</h3>
-
+<h3>📞 Customer Support</h3>
 <p>Always Available</p>
-
 </div>
 
 </div>
 
 </section>
 
-<!-- अगले Part में Featured Products शुरू होगा -->
- <!-- ================= FEATURED PRODUCTS ================= -->
+<!-- ================= CUSTOMER REVIEWS ================= -->
+
+<section class="reviews">
+
+<h2>⭐ Customer Reviews ⭐</h2>
+
+<div class="review-container">
+
+<div class="review-card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>"Best Quality Products. Fast Delivery."</p>
+<h4>- Rahul Kumar</h4>
+</div>
+
+<div class="review-card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>"Affordable Price & Excellent Service."</p>
+<h4>- Aman Singh</h4>
+</div>
+
+<div class="review-card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>"Highly Recommended Shop."</p>
+<h4>- Priya Sharma</h4>
+</div>
+
+</div>
+
+</section>
+<!-- ================= FEATURED PRODUCTS ================= -->
 
 <section id="featured" class="featured">
 
@@ -185,34 +227,41 @@ at the best price.
 <img src="image/lights.png" alt="LED Lights">
 <h3>LED Lights</h3>
 <p>Premium Quality Lighting</p>
-<a href="https://wa.me/918812981480" target="_blank" class="order-btn">Order Now</a>
+<a href="https://wa.me/918812981480" target="_blank" class="order-btn">
+Order Now
+</a>
 </div>
 
 <div class="featured-card">
 <img src="image/fan.png" alt="BLDC Fan">
 <h3>BLDC Fan</h3>
 <p>Energy Saving Technology</p>
-<a href="https://wa.me/918812981480" target="_blank" class="order-btn">Order Now</a>
+<a href="https://wa.me/918812981480" target="_blank" class="order-btn">
+Order Now
+</a>
 </div>
 
 <div class="featured-card">
-<img src="image/induction.png" alt="Induction">
+<img src="image/induction.png" alt="Induction Cooktop">
 <h3>Induction Cooktop</h3>
 <p>Fast & Safe Cooking</p>
-<a href="https://wa.me/918812981480" target="_blank" class="order-btn">Order Now</a>
+<a href="https://wa.me/918812981480" target="_blank" class="order-btn">
+Order Now
+</a>
 </div>
 
 <div class="featured-card">
 <img src="image/gas-stove.png" alt="Gas Stove">
 <h3>Gas Stove</h3>
 <p>Stylish & Durable</p>
-<a href="https://wa.me/918812981480" target="_blank" class="order-btn">Order Now</a>
+<a href="https://wa.me/918812981480" target="_blank" class="order-btn">
+Order Now
+</a>
 </div>
 
 </div>
 
 </section>
-
 <!-- ================= BUSINESS PRODUCTS ================= -->
 
 <section id="business" class="business">
@@ -228,7 +277,7 @@ at the best price.
 </div>
 
 <div class="business-card">
-<img src="image/kitchen.png" alt="Kitchen">
+<img src="image/kitchen.png" alt="Kitchen Appliances">
 <h3>Kitchen Appliances</h3>
 <a href="https://wa.me/918812981480" target="_blank" class="order-btn">WhatsApp Order</a>
 </div>
@@ -252,7 +301,7 @@ at the best price.
 </div>
 
 <div class="business-card">
-<img src="image/kettle.png" alt="Kettle">
+<img src="image/kettle.png" alt="Electric Kettle">
 <h3>Electric Kettle</h3>
 <a href="https://wa.me/918812981480" target="_blank" class="order-btn">WhatsApp Order</a>
 </div>
@@ -273,8 +322,7 @@ at the best price.
 
 </section>
 
-<!-- अगले Part में Shop Information और Contact आएगा -->
- <!-- ================= SHOP INFORMATION ================= -->
+<!-- ================= SHOP INFORMATION ================= -->
 
 <section id="shop-info" class="shop-info">
 
@@ -299,23 +347,20 @@ at the best price.
 
 <div class="shop-card">
 <h3>💬 WhatsApp</h3>
-<p>
-<a href="https://wa.me/918812981480" target="_blank">
-Chat on WhatsApp
-</a>
-</p>
+<p><a href="https://wa.me/918812981480" target="_blank">Chat on WhatsApp</a></p>
 </div>
 
 <div class="shop-card">
 <h3>🕒 Shop Timing</h3>
-<p>09:00 AM - 09:00 PM</p>
+<p>09:00 AM – 09:00 PM</p>
 </div>
 
 <div class="shop-card">
 <h3>📍 Address</h3>
 <p>
-J.K Kedia Road,<br>
-Opp. SBI & Axis Bank
+J.K. Kedia Road,<br>
+Opp. SBI, Near Axis Bank,<br>
+Hojai, Assam – 782435
 </p>
 </div>
 
@@ -323,6 +368,22 @@ Opp. SBI & Axis Bank
 
 </section>
 
+<!-- ================= GOOGLE MAP ================= -->
+
+<section class="map-section">
+
+<h2>📍 Find Our Shop</h2>
+
+<iframe
+src="https://www.google.com/maps?q=Hojai%20Assam&output=embed"
+width="100%"
+height="400"
+style="border:0;border-radius:15px;"
+loading="lazy"
+allowfullscreen>
+</iframe>
+
+</section>
 <!-- ================= CONTACT ================= -->
 
 <section id="contact" class="contact">
@@ -341,12 +402,11 @@ required>
 
 <textarea
 placeholder="Write your message..."
-rows="6"></textarea>
+rows="6"
+required></textarea>
 
 <button type="submit">
-
 Send Message
-
 </button>
 
 </form>
@@ -360,9 +420,7 @@ Send Message
 <h2>N.R Communication</h2>
 
 <p>
-
-Electrical • Electronics • Kitchen Appliances
-
+Electrical • Electronics • Kitchen Appliances • Mobile Accessories
 </p>
 
 <div class="footer-social">
@@ -374,38 +432,42 @@ Electrical • Electronics • Kitchen Appliances
 <a href="#">YouTube</a>
 
 <a href="https://github.com/nrcommunation-tech" target="_blank">
-
 GitHub
-
 </a>
 
 </div>
 
 <p>
-
-© 2026 N.R Communication
-
-All Rights Reserved.
-
+© 2026 N.R Communication. All Rights Reserved.
 </p>
 
 </footer>
+
+<!-- Floating WhatsApp -->
+
 <a href="https://wa.me/918812981480"
 class="whatsapp-float"
 target="_blank">
+
 💬
+
 </a>
+
+<!-- Floating Call -->
 
 <a href="tel:+918812981480"
 class="call-float">
+
 📞
+
 </a>
+
+<!-- JavaScript -->
+<button id="topBtn" class="top-btn">
+⬆️
+</button>
 
 <script src="script.js"></script>
 
 </body>
-</html>
-
-</body>
-
 </html>

@@ -1,169 +1,186 @@
 // ===============================
-// N.R Communication
-// Professional Business Website
-// script.js
+// Typing Effect
 // ===============================
 
+const typing = document.getElementById("typing");
+
+const words = [
+    "Electrical Store",
+    "Electronics Shop",
+    "Kitchen Appliances",
+    "Mobile Accessories",
+    "Best Price • Best Quality"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+
+    const current = words[wordIndex];
+
+    if (!deleting) {
+        typing.textContent = current.substring(0, charIndex++);
+        if (charIndex > current.length) {
+            deleting = true;
+            setTimeout(typeEffect, 1500);
+            return;
+        }
+    } else {
+        typing.textContent = current.substring(0, charIndex--);
+        if (charIndex < 0) {
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+        }
+    }
+
+    setTimeout(typeEffect, deleting ? 50 : 100);
+}
+
+typeEffect();
+
+// ===============================
 // Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
+// ===============================
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", function(e){
+
         e.preventDefault();
 
         const target = document.querySelector(this.getAttribute("href"));
 
-        if (target) {
+        if(target){
             target.scrollIntoView({
-                behavior: "smooth"
+                behavior:"smooth"
             });
         }
+
     });
-});
-
-// ===============================
-// Navbar Shadow on Scroll
-// ===============================
-
-window.addEventListener("scroll", function () {
-
-    const nav = document.querySelector("nav");
-
-    if (window.scrollY > 50) {
-        nav.style.boxShadow = "0 10px 30px rgba(0,0,0,.25)";
-    } else {
-        nav.style.boxShadow = "none";
-    }
 
 });
 
 // ===============================
-// Typing Effect
+// Navbar Active Link
 // ===============================
 
-const text = "Electrical • Electronics • Kitchen Appliances • Mobile Accessories";
-
-const typing = document.getElementById("typing");
-
-let i = 0;
-
-function typeText() {
-
-    if (!typing) return;
-
-    if (i < text.length) {
-
-        typing.innerHTML += text.charAt(i);
-
-        i++;
-
-        setTimeout(typeText, 60);
-
-    }
-
-}
-
-window.onload = typeText;
-
-// ===============================
-// Back To Top Button
-// ===============================
-
-const topBtn = document.createElement("button");
-
-topBtn.innerHTML = "⬆";
-
-topBtn.id = "topBtn";
-
-document.body.appendChild(topBtn);
-
-topBtn.style.cssText = `
-position:fixed;
-right:20px;
-bottom:20px;
-width:55px;
-height:55px;
-border:none;
-border-radius:50%;
-background:#0d6efd;
-color:#fff;
-font-size:22px;
-cursor:pointer;
-display:none;
-z-index:9999;
-box-shadow:0 0 15px rgba(13,110,253,.6);
-`;
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav ul li a");
 
 window.addEventListener("scroll", () => {
 
+    let current = "";
+
+    sections.forEach(section => {
+
+        const top = section.offsetTop - 120;
+
+        if (pageYOffset >= top) {
+            current = section.getAttribute("id");
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href")==="#" + current){
+            link.classList.add("active");
+        }
+
+    });
+
+});
+// ===============================
+// Mobile Menu Toggle
+// ===============================
+
+const menuToggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-menu");
+
+menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+// ===============================
+// Dark Mode
+// ===============================
+
+const darkBtn = document.getElementById("dark-mode-toggle");
+
+// पहले से सेव किया हुआ मोड लोड करें
+if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark-mode");
+    darkBtn.textContent = "☀️";
+}
+
+darkBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark-mode");
+
+    if(document.body.classList.contains("dark-mode")){
+        darkBtn.textContent = "☀️";
+        localStorage.setItem("theme", "dark");
+    }else{
+        darkBtn.textContent = "🌙";
+        localStorage.setItem("theme", "light");
+    }
+
+});
+// ===============================
+// Scroll To Top Button
+// ===============================
+
+const topBtn = document.getElementById("topBtn");
+
+// Show / Hide Button
+window.addEventListener("scroll", () => {
+
     if (window.scrollY > 300) {
-
-        topBtn.style.display = "block";
-
+        topBtn.classList.add("show");
     } else {
-
-        topBtn.style.display = "none";
-
+        topBtn.classList.remove("show");
     }
 
 });
 
-topBtn.onclick = () => {
+// Scroll to Top
+topBtn.addEventListener("click", () => {
 
     window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
+        top: 0,
+        behavior: "smooth"
     });
 
-};
-
+});
 // ===============================
-// Reveal Animation
+// Hero Image Slider
 // ===============================
 
-const cards = document.querySelectorAll(
-".featured-card,.business-card,.about-card,.shop-card"
-);
+const slides = document.querySelectorAll(".slide");
 
-const observer = new IntersectionObserver(entries => {
+let currentSlide = 0;
 
-entries.forEach(entry=>{
+function showSlide(index){
 
-if(entry.isIntersecting){
+    slides.forEach((slide)=>{
+        slide.classList.remove("active");
+    });
 
-entry.target.style.opacity="1";
-
-entry.target.style.transform="translateY(0)";
+    slides[index].classList.add("active");
 
 }
 
-});
+setInterval(()=>{
 
-});
+    currentSlide++;
 
-cards.forEach(card=>{
+    if(currentSlide >= slides.length){
+        currentSlide = 0;
+    }
 
-card.style.opacity="0";
+    showSlide(currentSlide);
 
-card.style.transform="translateY(60px)";
-
-card.style.transition=".7s";
-
-observer.observe(card);
-
-});
-
-// ===============================
-// Footer Year
-// ===============================
-
-const footer = document.querySelector("footer p:last-child");
-
-if(footer){
-
-footer.innerHTML="© "+new Date().getFullYear()+" N.R Communication | All Rights Reserved.";
-
-}
-
-console.log("Website Loaded Successfully");
+},3000);
