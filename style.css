@@ -661,3 +661,36 @@ body.dark-mode .offer-btn{
         transform:scale(1);
     }
 }
+/* =========================
+   PRODUCT SEARCH
+========================= */
+
+.search-box{
+    max-width:500px;
+    margin:25px auto 40px;
+}
+
+.search-box input{
+    width:100%;
+    padding:15px 20px;
+    font-size:18px;
+    border:2px solid #0d6efd;
+    border-radius:50px;
+    outline:none;
+    transition:.3s;
+    box-sizing:border-box;
+}
+
+.search-box input:focus{
+    box-shadow:0 0 15px rgba(13,110,253,.3);
+}
+
+body.dark-mode .search-box input{
+    background:#242424;
+    color:#fff;
+    border-color:#4da3ff;
+}
+
+body.dark-mode .search-box input::placeholder{
+    color:#ccc;
+}

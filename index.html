@@ -13,6 +13,8 @@
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
 </head>
 
 <body>
@@ -140,7 +142,7 @@ class="offer-btn">
 </section>
 <!-- ================= ABOUT ================= -->
 
-<section id="about" class="about">
+<section id="about" class="about" data-aos="fade-up">
 
 <h2>About Our Shop</h2>
 
@@ -188,7 +190,7 @@ at the best price.
 
 <!-- ================= CUSTOMER REVIEWS ================= -->
 
-<section class="reviews">
+<section class="reviews" data-aos="fade-up">
 
 <h2>⭐ Customer Reviews ⭐</h2>
 
@@ -217,7 +219,7 @@ at the best price.
 </section>
 <!-- ================= FEATURED PRODUCTS ================= -->
 
-<section id="featured" class="featured">
+<section id="featured" class="featured" data-aos="zoom-in">
 
 <h2>⭐ Featured Products ⭐</h2>
 
@@ -264,9 +266,15 @@ Order Now
 </section>
 <!-- ================= BUSINESS PRODUCTS ================= -->
 
-<section id="business" class="business">
+<section id="business" class="business" data-aos="fade-right">
 
 <h2>🛍️ Our Products</h2>
+<div class="search-box">
+    <input
+        type="text"
+        id="productSearch"
+        placeholder="🔍 Search Products...">
+</div>
 
 <div class="business-box">
 
@@ -324,7 +332,7 @@ Order Now
 
 <!-- ================= SHOP INFORMATION ================= -->
 
-<section id="shop-info" class="shop-info">
+<section id="shop-info" class="shop-info" data-aos="fade-left">
 
 <h2>🏪 Shop Information</h2>
 
@@ -386,7 +394,7 @@ allowfullscreen>
 </section>
 <!-- ================= CONTACT ================= -->
 
-<section id="contact" class="contact">
+<section id="contact" class="contact" data-aos="zoom-in-up">
 
 <h2>📩 Contact Us</h2>
 
@@ -466,6 +474,7 @@ class="call-float">
 <button id="topBtn" class="top-btn">
 ⬆️
 </button>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script src="script.js"></script>
 

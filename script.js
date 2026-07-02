@@ -184,3 +184,36 @@ setInterval(()=>{
     showSlide(currentSlide);
 
 },3000);
+// ===============================
+// Product Search
+// ===============================
+
+const searchInput = document.getElementById("productSearch");
+const productCards = document.querySelectorAll(".business-card");
+
+searchInput.addEventListener("keyup", function () {
+
+    const keyword = this.value.toLowerCase();
+
+    productCards.forEach(card => {
+
+        const productName = card.querySelector("h3").textContent.toLowerCase();
+
+        if (productName.includes(keyword)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
+// ===============================
+// AOS Animation
+// ===============================
+
+AOS.init({
+    duration: 1000,
+    once: true,
+    offset: 100
+});
